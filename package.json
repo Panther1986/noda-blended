@@ -9,7 +9,8 @@
     "expensive": "node src/scripts/getExpensiveProducts.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "sum": "node src/scripts/getTotalPrice",
-    "random": "node src/scripts/getRandomProduct"
+    "random": "node src/scripts/getRandomProduct",
+    "writeFiles": "node src/scripts/writeFiles.js"
   },
   "keywords": [],
   "author": "Olha_Meshcheriakova <polzovatel77@gmail.com>",
