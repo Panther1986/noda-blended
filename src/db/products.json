@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Unbranded Frozen Chair",
+    "price": "893.00",
+    "category": "Music",
+    "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support"
+  },
+  {
+    "name": "Bespoke Fresh Table",
+    "price": "879.00",
+    "category": "Automotive",
+    "description": "The Football Is Good For Training And Recreational Purposes"
+  },
+  {
+    "name": "Unbranded Soft Sausages",
+    "price": "738.00",
+    "category": "Books",
+    "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support"
+  },
+  {
+    "name": "Handcrafted Bronze Hat",
+    "price": "803.00",
+    "category": "Sports",
+    "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit"
+  },
+  {
+    "name": "Fantastic Plastic Car",
+    "price": "551.00",
+    "category": "Clothing",
+    "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive"
+  }
+]
