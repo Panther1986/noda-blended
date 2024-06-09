@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose';
 
-export const createProductShema = new Schema(
+const createProductShema = new Schema(
   {
     name: {
       type: String,
@@ -24,3 +24,5 @@ export const createProductShema = new Schema(
     versionKey: false,
   },
 );
+
+export const Product = model("product", createProductShema);
