@@ -1,23 +1,24 @@
-import { getAllProducts,createProduct, deleteProduct } from "../services/products.js"
+import {
+  getAllProducts,
+  createProduct,
+  deleteProduct,
+} from '../services/products.js';
 import createHttpError from 'http-errors';
-
 
 export const getProductsController = async (req, res, next) => {
   const products = await getAllProducts();
 
   res.json({
     data: products,
-  })
+  });
 };
 export const createPoductController = async (req, res) => {
   const product = await createProduct(req.body);
-  res.status(201).json(
-    {
-      data: product,
-    }
-  )
+  res.status(201).json({
+    data: product,
+  });
 };
-export const deleteProductController = async (req, res,next) => {
+export const deleteProductController = async (req, res, next) => {
   const { productId } = req.params;
   const product = await deleteProduct(productId);
   if (!product) {
@@ -25,8 +26,5 @@ export const deleteProductController = async (req, res,next) => {
     return;
   }
 
-  res.status(204).send();
-}
-
-
-
+  res.sendStatus(204);
+};
