@@ -1,30 +1,17 @@
-import {loginUser, registerUser} from "../services/user.js"
+import {
+  loginUser,
+  registerUser,
+  findUserByEmail,
+  createUser,
+} from '../services/user.js';
+import createHttpError from 'http-errors';
 
 export const registerUserController = async (req, res) => {
-  const user = await registerUser(req.body);
+  const { email } = req.body;
+  const user = await findUserByEmail.findOne(email);
+  if (user) throw createHttpError(409, 'Email in use');
 
-  res.status(201).json({
-
-    data: {email:user.email, name: user.name},
-  })
+  const newUser = createUser(req.body);
 };
 
-export const loginUserController = async (req, res) => {
-  const session = await loginUser(req.body);
-
-  res.cookie('refreshToken', session.refreshToken, {
-    httpOnly: true,
-    expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
-  });
-
-  res.cookie('sessionId', session._id, {
-    httpOnly: true,
-    expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
-  })
-
-  res.status(200).json({
-    data: {
-      accessToken: session.accessToken,
-    }
-  })
-};
+export const loginUserController = async (req, res) => {};
