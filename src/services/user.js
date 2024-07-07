@@ -3,6 +3,7 @@ import { UserCollection } from '../db/user.js';
 import createHttpError from 'http-errors';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import { env } from '../utils/env.js';
 
 export const findUserByEmail = (email) => UserCollection.findOne({ email });
 export const updateUserWithToken = (id) => {
@@ -26,16 +27,6 @@ export const createUser = async (userData) => {
     password: cryptPassword,
   });
   return updateUserWithToken(newUser._id);
-};
-
-export const registerUser = async (userData) => {
-  // const user = await UserCollection.findOne({ email: userData.email });
-  // if (user) throw createHttpError(409, 'Email in use');
-  // const cryptPassword = await bcrypt.hash(userData.password, 10);
-  // return await UserCollection.create({
-  //   ...userData,
-  //   password: cryptPassword,
-  // });
 };
 
 export const loginUser = async (userData) => {
